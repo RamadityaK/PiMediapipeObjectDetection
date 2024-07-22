@@ -65,16 +65,9 @@ while True:
             deviationx = centroidx - 240
             deviationy = centroidy - 320
         
-            #Print to console for Debugging
-            #print(category.category_name, ", with prob: ", str(round(category.score,2))
-                  #, "and centroid: ", str(centroidx),",",str(centroidy))
-            #print('deviation from center: ', str(deviationx), ",", str(deviationy))
+            print(category.category_name, ", with prob: ", str(round(category.score,2))
+                  , "and centroid: ", str(centroidx),",",str(centroidy))
+            print('deviation from center: ', str(deviationx), ",", str(deviationy))
 
-    #Generate and write serial output
-    output = str(detected) + ',' + str(deviationx) + ',' + str(deviationy) + ',' + str(width) + ',' +str(height)
-    ser.write(output.encode())
-
-    #The written data should be of the following format:
-    # detected?(1 or 0), xdeviation, ydeviation, box width, box height.
-    print(output)
     print("Inference Time: ", str(time.time()-last_time))
+    print('--------------------------------------------')
